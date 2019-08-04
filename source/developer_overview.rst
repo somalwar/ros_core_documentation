@@ -182,7 +182,7 @@ The purpose of the ``rcl`` implementation is to provide a common implementation 
 The purpose of the ``rmw`` interface is to capture the absolute minimum middleware functionality needed to support ROS's client libraries.
 Finally, the implementation of the ``rmw`` |API| is provided by a middleware implementation specific |package|, e.g. ``rmw_fastrtps_cpp``, the library of which is compiled against vendor specific DDS interfaces and types.
 
-In the diagram above there is also a box labeled ``ros_to_dds``, and the purpose of this box is to represent a category of possible packages which all the user to access DDS vendor specific objects and settings using the ROS equivalents.
+In the diagram above there is also a box labeled ``ros_to_dds``, and the purpose of this box is to represent a category of possible packages which allows the user to access DDS vendor specific objects and settings using the ROS equivalents.
 One of the goals of this abstraction interface is to completely insulate the ROS user space code from the middleware being used, so that changing DDS vendors or even middleware technology has a minimal impact on the users code.
 However, we recognize that on occasion it is useful to reach into the implementation and manually adjust settings despite the consequences that might have.
 By requiring the use of one of these packages in order to access the underlying DDS vendor's objects, we can avoid exposing vendor specific symbols and headers in the normal interface.
